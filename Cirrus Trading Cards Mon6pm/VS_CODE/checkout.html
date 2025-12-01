@@ -1,0 +1,134 @@
+<!-- 2304412 Web Programming Group Work-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Cirrus Trading Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="Assets/cirrus_logo.gif" alt="Cirrus Logo" class="logo-inline">
+                <div class="brand-text">
+                    <h1 class="bungee-spice">Cirrus Trading Cards</h1>
+                    <p class="slogan">Rarest of Rare</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="house.html">Products</a></li>
+                <li><a href="cart.html" class="cart-link">Cart <span id="cart-count" class="cart-count">0</span></a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+                <li><a href="register.html" class="btn-register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="checkout-container">
+        <h2>Checkout</h2>
+        
+        <div class="checkout-content">
+
+            <!-- Shipping form: user enters address-->
+            <div class="shipping-form">
+                <h3>Shipping Information</h3>
+               <form id="checkoutForm">
+
+    <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+    </div>
+
+    <div class="form-group">
+        <label for="trn">TRN:</label>
+        <input type="text" id="trn" name="trn" placeholder="000-000-000" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="address">Shipping Address:</label>
+        <textarea id="address" name="address" required rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+    </div>
+
+    <div class="form-group">
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode" required>
+    </div>
+
+    <div class="form-group">
+        <label for="amountPaid">Amount Being Paid:</label>
+        <input type="number" id="amountPaid" name="amountPaid" required>
+    </div>
+
+    <div class="form-group">
+        <label for="changeReturned">Change Returned:</label>
+        <input type="text" id="changeReturned" name="changeReturned" readonly>
+    </div>
+
+</form>
+
+            </div>
+            
+            <!-- Order Summary: populated by initializeCheckout() using cart from localStorage -->
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="checkout-summary">
+                </div>
+                
+                <!-- Calculated totals shown -->
+                <div class="checkout-totals">
+    <div class="summary-item">
+        <span>Subtotal:</span>
+        <span id="checkout-subtotal">$0.00</span>
+    </div>
+
+    <div class="summary-item">
+        <span>Tax (15%):</span>
+        <span id="checkout-tax">$0.00</span>
+    </div>
+
+    <div class="summary-item">
+        <span>Discount:</span>
+        <span id="checkout-discount">$0.00</span>
+    </div>
+
+    <div class="summary-item total-highlight">
+        <strong>Total Amount Due:</strong>
+        <strong id="totalAmount">$0.00</strong>
+    </div>
+</div>
+
+                
+                <!-- Checkout actions: confirm triggers confirmOrder() which saves order and redirects -->
+                <div class="checkout-actions">
+                    <button class="btn-secondary" onclick="window.location.href='cart.html'">Cancel</button>
+                    <button class="btn-secondary" onclick="window.location.href='cart.html'; clearCart()">Clear All</button>
+                    <button class="btn-primary" onclick="confirmOrder()">Confirm Order</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Cirrus Trading Cards. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

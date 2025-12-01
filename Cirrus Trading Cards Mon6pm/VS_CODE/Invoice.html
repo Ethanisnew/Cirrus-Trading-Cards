@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - Cirrus Trading Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="Assets/cirrus_logo.gif" alt="Cirrus Logo" class="logo-inline">
+                <div class="brand-text">
+                    <h1 class="bungee-spice">Cirrus Trading Cards</h1>
+                    <p class="slogan">Rarest of Rare</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="house.html">Products</a></li>
+                <li><a href="cart.html" class="cart-link">Cart <span id="cart-count" class="cart-count">0</span></a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+                <li><a href="register.html" class="btn-register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="invoice-container">
+        <div class="invoice">
+            <!-- Invoice header -->
+           <header class="invoice-header">
+    <div style="text-align:center;">
+        <img src="Assets/cirrus.png" alt="Cirrus Logo" class="logo-middle" style="max-width:140px;">
+    </div>
+
+    <h2 class="bungee-spice" style="text-align:center; margin-top:10px;">Cirrus Trading Cards</h2>
+
+    <div class="invoice-meta">
+        <p><strong>Invoice Number:</strong> <span id="invoice-number">-</span></p>
+        <p><strong>Date Issued:</strong> <span id="invoice-date">-</span></p>
+        <p><strong>TRN:</strong> <span id="invoice-trn">-</span></p>
+    </div>
+</header>
+            
+            <!-- Billing Info -->
+            <div class="invoice-details">
+                <div class="billing-info">
+                    <h3>Billed To:</h3>
+                    <p><strong id="customer-name">-</strong></p>
+                    <p>Email: <span id="customer-email">-</span></p>
+                    <p>Address: <span id="customer-address">-</span></p>
+                    <p>City/Zip: <span id="customer-city">-</span></p>
+                </div>
+            </div>
+            
+            <!-- Items table -->
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="invoice-items">
+                    <!-- Invoice items will be populated by JavaScript -->
+                </tbody>
+            </table>
+            
+            <!-- Totals -->
+            <div class="invoice-totals">
+
+    <div class="total-item">
+        <span>Subtotal:</span>
+        <span id="invoice-subtotal">$0.00</span>
+    </div>
+
+    <div class="total-item">
+        <span>Discount:</span>
+        <span id="invoice-discount">$0.00</span>
+    </div>
+
+    <div class="total-item">
+        <span>Tax (15%):</span>
+        <span id="invoice-tax">$0.00</span>
+    </div>
+
+    <div class="total-item">
+        <span>Amount Paid:</span>
+        <span id="invoice-amount-paid">$0.00</span>
+    </div>
+
+    <div class="total-item">
+        <span>Change Returned:</span>
+        <span id="invoice-change-returned">$0.00</span>
+    </div>
+
+    <div class="total-item grand-total">
+        <strong>Total Amount:</strong>
+        <strong id="invoice-total">$0.00</strong>
+    </div>
+
+</div>
+
+            
+            <!-- Actions: print or continue shopping -->
+            <div class="invoice-actions">
+                <button class="btn-primary" onclick="window.print()">Print Invoice</button>
+                <button class="btn-secondary" onclick="window.location.href='index.html'">Continue Shopping</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Cirrus Trading Cards. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

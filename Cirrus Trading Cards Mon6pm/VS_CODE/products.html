@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Cards - Cirrus Trading Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1 class="bungee-spice">Cirrus Trading Cards</h1>
+                <p class="slogan">Rarest of Rare</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products-section">
+            <h2>Pokémon Trading Cards Collection</h2>
+            
+            <!-- Search and Filter Controls -->
+            <div class="product-controls">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search Pokémon cards..." class="search-input">
+                </div>
+                <div class="filter-options">
+                    <select id="category-filter" class="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="premium">Premium Collections</option>
+                        <option value="trainer-box">Elite Trainer Boxes</option>
+                        <option value="booster">Booster Boxes & Bundles</option>
+                        <option value="special">Special Editions</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="products-container" class="products-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Cirrus Trading Cards. All Rights Reserved.</p>
+    </footer>
+
+    <script src="product-catalogue.js"></script>
+</body>
+</html>
