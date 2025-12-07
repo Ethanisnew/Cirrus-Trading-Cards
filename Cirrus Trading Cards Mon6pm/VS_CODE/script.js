@@ -400,3 +400,48 @@ window.addToCart = addToCart;
 window.filterProductsByCategory = filterProductsByCategory;
 window.searchProducts = searchProducts;
 window.sortProductsByPrice = sortProductsByPrice;
+
+
+// Dashboard Script         
+function loadDashboard() {
+    const username = localStorage.getItem("username");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let profile = JSON.parse(localStorage.getItem("userProfile"));
+
+        // Redirect if not logged in
+        if (!username) return window.location.href = "login.html";
+
+        // Init profile if none exists
+        if (!profile) {
+            profile = {
+                username: username,
+                email: "",
+                favorites: [],
+                purchases: []
+            };
+            localStorage.setItem("userProfile", JSON.stringify(profile));
+        }
+
+        document.getElementById("welcomeMsg").textContent = `Welcome, ${username}!`;
+        document.getElementById("profileName").textContent = profile.username;
+        document.getElementById("profileEmail").textContent = profile.email || "Not set";
+
+        document.getElementById("cartCount").textContent = cart.length;
+        document.getElementById("dashCartCount").textContent = cart.length;
+
+        loadList("favoriteList", profile.favorites, "No favorites yet");
+        loadList("purchaseList", profile.purchases, "No purchases recorded");
+    }
+
+    function loadList(id, items, defaultMsg) {
+        const list = document.getElementById(id);
+        list.innerHTML = items.length
+            ? items.map(i => `<li>${i}</li>`).join("")
+            : `<li>${defaultMsg}</li>`;
+    }
+
+    function logoutUser() {
+        localStorage.removeItem("username");
+        localStorage.removeItem("userProfile");
+        window.location.href = "login.html";
+    }
