@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Cirrus Trading Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="Assets/cirrus_logo.gif" alt="Cirrus Logo" class="logo-inline">
+                <div class="brand-text">
+                    <h1 class="bungee-spice">Cirrus Trading Cards</h1>
+                    <p class="slogan">Rarest of Rare</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html" class="cart-link">Cart <span id="cart-count" class="cart-count">0</span></a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+                <li><a href="register.html" class="btn-register">Register</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="#" onclick="logoutUser()">Logout</a></li> <!-- can make it to hide until user logs in-->
+            </ul>
+        </nav>
+    </header>
+
+    <body onload="loadDashboard()">
+    <!-- ----- Dashboard Content ----- -->
+    <section class="dashboard-container">
+
+        <h2 id="welcomeMsg">Welcome!</h2>
+
+        <div class="dashboard-section">
+            <h3>Your Profile</h3>
+            <p><strong>Name:</strong> <span id="profileName">Loading...</span></p>
+            <p><strong>Email:</strong> <span id="profileEmail">Not set</span></p>
+        </div>
+
+        <div class="dashboard-section">
+            <h3>Favorites ❤️</h3>
+            <ul id="favoriteList">
+                <li>No favorites yet</li>
+            </ul>
+        </div>
+
+        <div class="dashboard-section">
+            <h3>Purchase History 🛒</h3>
+            <ul id="purchaseList">
+                <li>No purchases recorded</li>
+            </ul>
+        </div>
+
+        <div class="dashboard-buttons">
+            <a class="btn" href="products.html">Shop More</a>
+            <a class="btn" href="cart.html">View Cart (<span id="dashCartCount">0</span>)</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cirrus Trading Cards. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
