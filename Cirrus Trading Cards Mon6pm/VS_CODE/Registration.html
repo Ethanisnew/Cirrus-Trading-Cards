@@ -3,49 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Register - Cirrus Trading Cards</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..//assests/style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <h1 class="bungee-spice">Cirrus Trading Cards</h1>
-                <p class="slogan">Rarest of Rare</p>
+                <img src="..//assests/cirrus_logo.gif" alt="Cirrus Logo" class="logo-inline">
+                <div class="brand-text">
+                    <h1 class="bungee-spice">Cirrus Trading Cards</h1>
+                    <p class="slogan">Rarest of Rare</p>
+                </div>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="product.html">Products</a></li>
-                <li><a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a></li>
-                <li><a href="Registration.html">Registration Page</a></li>
+                <li><a href="house.html">Products</a></li>
+                <li><a href="cart.html" class="cart-link">Cart <span id="cart-count" class="cart-count">0</span></a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+                <li><a href="register.html" class="btn-register">Register</a></li>
             </ul>
         </nav>
     </header>
 
+<div class="registration-container">
+  <div class="registration-box">
+    <h2>Create an account</h2>
+
     <form id="regForm">
-        <input type="text" id="firstName" placeholder="First Name" required>
-        <input type="text" id="lastName" placeholder="Last Name" required>
-        <input type="date" id="dob" required>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="date" required>
 
-        <select id="gender" required>
-            <option value="">Select Gender</option>
-            <option>Male</option>
-            <option>Female</option>
-            </select>
-        
-        <input type="tel" id="phone" placeholder="Number" required>
-        <input type="text" id="email" placeholder="Email" required>
+    <select required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+    </select>
 
-        <input type="text" id="trn" placeholder="TRN(000-000-000)" required>
-        <input type="text" id="password" placeholder="Password 8 characters" required>
+        <input type="tel" placeholder="Number" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="TRN (000-000-000)" required>
+        <input type="password" placeholder="Password (8 characters)" minlength="8" required>
 
-        <button type="button" onclick="Register()">Register</button>
-        <button type="reset">Cancel</button>
-    </form>
-    </body>
-    </html>
+    <button type="submit" class="btn-primary">Register</button>
+    <button type="reset" class="btn-secondary">Cancel</button>
+
+    <p class="form-link">
+        Already have an account?
+    <a href="index.html">Please log in</a>
+    </p>
+</form>
 
 
