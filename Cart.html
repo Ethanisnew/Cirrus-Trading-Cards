@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Cirrus Trading Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="Assets/logoCardCo.png" alt="Cirrus Logo" class="logo-inline">
+            <h1 class="bungee-spice">Cirrus Trading Cards</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="products.html" class="active">Home</a></li>
+            <li><a href="Cart.html" class="cart-link">Cart <span id="cart-count" class="cart-count">0</span></a></li>
+            <li><a href="index.html" class="btn-login">Login</a></li>
+            <li><a href="Registration.html" class="btn-register">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<table id="cartTable" border="1" cellspacing="0" cellpadding="6">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price ($)</th>
+            <th>Qty</th>
+            <th>Sub-Total ($)</th>
+            <th>Discount ($)</th>
+            <th>Tax ($)</th>
+            <th>Total ($)</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h3 id="grandTotal">Grand Total: $0.00</h3>
+
+<div style="text-align: center; margin-top: 20px;">
+    <button class="btn-primary" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+    <button class="btn-secondary" onclick="clearCart()">Clear Cart</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

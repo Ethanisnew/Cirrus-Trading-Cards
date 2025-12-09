@@ -1,0 +1,283 @@
+/*1. Root folder */
+
+:root {
+    --brand-nude: #fb9b4c; 
+    --dark-bg: #ffffff;    
+    --light-bg: #f4e88d;   
+    --white: #ffffff;
+    --text-main: #333;
+    --border: #ddd;
+    --transition: 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-main);
+}
+
+.bungee-spice {
+    font-family: 'Bungee Spice', cursive;
+}
+
+/*Navigation Bar */
+.navbar {
+    background-color: var(--dark-bg);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-brand { 
+    display: flex; 
+    align-items: center; 
+    color: var(--brand-pink); 
+}
+
+.logo-inline { 
+    height: 70px; 
+    margin-right: 30px; 
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 20px; 
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, 
+.nav-links a.active { 
+    color: var(--brand-pink); 
+}
+
+.cart-count {
+    background: var(--brand-pink);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+/* 3. For Containers */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: wrap;
+    min-height: 80vh;
+    padding: 40px 20px;
+}
+
+.auth-box, 
+.checkout-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width:fit-content; 
+    min-width: 350px; 
+    max-width: 90%;
+    
+    text-align: center;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.registration-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    min-height: 100vh;      
+    background-color: var(--light-bg); 
+    padding: 20px;
+}
+
+.registration-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;     
+    max-width: 450px;               
+}
+
+#regForm input, #regForm select {
+    width: 100%;      
+    padding: 12px;
+    margin-bottom: 15px;   
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    box-sizing: border-box;  
+}
+.btn-primary {
+   background: var(--brand-pink);
+    color: rgb(213, 101, 21);
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;;
+}
+
+.btn-primary:hover { 
+    opacity: 0.85;
+    transform: scale(1.02);
+}
+
+/*4. Product grid*/
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.product-card:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--brand-pink); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+}
+
+.product-card img { 
+    max-width: 100%; 
+    border-radius: 8px; 
+}
+
+/* 5. Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background: var(--brand-pink);
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* 6. Dashboard */
+.dashboard-container { 
+    padding: 40px 5%; 
+}
+
+.chart-section {
+    background: var(--white);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--brand-pink);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/*7. Footer */
+.footer {
+    text-align: center;
+    padding: 3rem;
+    background: var(--dark-bg);
+    color: #888;
+    margin-top: 50px;
+}
+
+/*8. Responsive Design */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; text-align: center; }
+    .nav-links { padding: 0; margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+}
+
+/* 9. Print styles */
+@media print {
+    .navbar, .footer, .checkout-actions, button { display: none !important; }
+    .invoice { box-shadow: none; border: none; margin: 0; }
+}
+/* 10. checkout Styles */
+
+.checkout-container {
+    padding: 40px 5%;
+}
+
+.checkout-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.checkout-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Shipping | Summary */
+    gap: 30px;
+    align-items: start;
+}
+
+/* Some fixes for the index.html */
+.btn-secondary {
+    background: #ccc;
+    color: #333;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: #bbb;
+    transform: scale(1.02);
+}
+
+.form-link {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    color: #555;
+}
+
+.form-link a {
+    color: var(--brand-nude);
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.form-link a:hover {
+    text-decoration: underline;
+}
+
+

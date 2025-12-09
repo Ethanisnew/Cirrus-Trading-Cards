@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Cirrus Trading Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="Assets/logoCardCo.png" alt="Cirrus Logo" class="logo-inline">
+            <h1 class="bungee-spice">Cirrus Trading Cards</h1>
+        </div>
+        <ul class="nav-links">
+            <!--Letting Products be the "homepage" as well-->
+                <li><a href="products.html" class="active">Home</a></li>
+                <li><a href="Cart.html" class="cart-link">Cart <span id="cart-count" class="cart-count">0</span></a></li>
+                <li><a href="index.html" class="btn-login">Login</a></li>
+                <li><a href="Registration.html" class="btn-register">Register</a></li>
+                <li id="dashboardLink" style="display: none;"><a href="dashboard.html">Dashboard</a></li>
+
+            </ul>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="products-section">
+        <h2>Trading Card Collection</h2>
+
+        <div class="product-controls">
+            <input type="text" id="search-input" placeholder="Search…" class="search-input">
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="premium">Premium</option>
+                <option value="trainer-box">Elite Trainer Boxes</option>
+                <option value="booster">Booster Boxes</option>
+                <option value="special">Special Editions</option>
+            </select>
+        </div>
+
+        <div id="products-container" class="products-grid"></div>
+    </section>
+</main>
+
+<footer><p>&copy; 2025 Cirrus Trading Cards</p></footer>
+
+<script src="script.js"></script>
+</body>
+</html>

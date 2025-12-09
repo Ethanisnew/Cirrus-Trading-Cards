@@ -1,0 +1,73 @@
+<!-- 2304412 Web Programming Group Work-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Cirrus Trading Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="Assets/logoCardCo.png" alt="Cirrus Logo" class="logo-inline">
+            <h1 class="bungee-spice">Cirrus Trading Cards</h1>
+        </div>
+        <ul class="nav-links">
+                <li><a href="products.html" class="active">Home</a></li>
+                <li><a href="Cart.html" class="cart-link">Cart <span id="cart-count" class="cart-count">0</span></a></li>
+                <li><a href="index.html" class="btn-login">Login</a></li>
+                <li><a href="Registration.html" class="btn-register">Register</a></li>
+            </ul>
+    </nav>
+</header>
+
+<main class="checkout-container">
+    <h2>Checkout</h2>
+
+    <div class="checkout-content">
+        
+        <!-- Shipping -->
+        <form id="checkoutForm" class="shipping-form">
+            <h3>Shipping Information</h3>
+
+            <input id="fullName" type="text" placeholder="Full Name" required>
+            <input id="trn" type="text" placeholder="TRN (000-000-000)" required>
+            <input id="email" type="email" placeholder="Email" required>
+            <textarea id="address" placeholder="Address" rows="3" required></textarea>
+            <input id="city" type="text" placeholder="City" required>
+            <input id="zipCode" type="text" placeholder="Zip Code" required>
+            <input id="amountPaid" type="number" placeholder="Amount Paid" required>
+            <input id="changeReturned" type="text" placeholder="Change Returned" readonly>
+        </form>
+
+        <!-- Summary -->
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div id="checkout-summary"></div>
+
+            <div class="checkout-totals">
+                <p>Subtotal: <span id="checkout-subtotal">$0.00</span></p>
+                <p>Tax (15%): <span id="checkout-tax">$0.00</span></p>
+                <p>Discount: <span id="checkout-discount">$0.00</span></p>
+                <p><strong>Total:</strong> <strong id="totalAmount">$0.00</strong></p>
+            </div>
+
+            <button class="btn-secondary" onclick="window.location.href='cart.html'">Cancel</button>
+            <button class="btn-secondary" onclick="clearCart(); window.location.href='cart.html';">Clear All</button>
+            <button class="btn-primary" onclick="confirmOrder()">Confirm Order</button>
+        </div>
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
